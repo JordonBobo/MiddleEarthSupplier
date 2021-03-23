@@ -13,11 +13,11 @@ module.exports = (app) => {
         id: req.params.id,
       },
       include: [db.Item],
-    }).then((dbProduct) => res.json(dbProduct));
+    }).then((dbProduct) => res.json('home', dbProduct));
   });  
   
   app.post('api/products', (req, res) => {
-    db.Product.create(req.body).then((dbProduct) => res.json(dbProduct));
+    db.Product.create(req.body).then((dbProduct) => res.json('home', dbProduct));
   });
   
   app.delete('api/products/:id', (req, res) => {
@@ -25,6 +25,6 @@ module.exports = (app) => {
       where: {
         id: req.params.id,
       },
-    }).then((dbProduct) => res.json(dbProduct));
+    }).then((dbProduct) => res.json('home', dbProduct));
   });
 };
