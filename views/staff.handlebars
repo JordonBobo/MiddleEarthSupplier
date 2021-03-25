@@ -11,7 +11,7 @@
 <h1>Staff Back Office</h1>
 
 <h2>Add New Product</h2>
-<form id="form">
+<form id="newProductForm">
   <div>
     <label for="productName">Product Name:</label>
     <input type="text" id="productName" name="name">
@@ -29,10 +29,10 @@
 <ul>
   {{#each burgers}}
   {{#unless devoured}}
-    <li>
-      {{burger_name}}
-      <button class="devour" data-id="{{id}}">Devour It!</button>
-    </li>
+  <li>
+    {{burger_name}}
+    <button class="devour" data-id="{{id}}">Devour It!</button>
+  </li>
   {{/unless}}
   {{/each}}
 </ul>
@@ -40,9 +40,9 @@
 <ul>
   {{#each burgers}}
   {{#if devoured}}
-    <li>
-      {{burger_name}}
-    </li>
+  <li>
+    {{burger_name}}
+  </li>
   {{/if}}
   {{/each}}
 </ul>
