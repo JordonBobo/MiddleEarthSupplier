@@ -4,6 +4,7 @@ const db = require('../models');
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const { allowedNodeEnvironmentFlags } = require("process");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -12,6 +13,7 @@ module.exports = function(app) {
       res.render('home', {product:dbProduct})
     });
   });
+
 
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
@@ -46,4 +48,9 @@ module.exports = function(app) {
       res.render('staff', {order:dbOrder})
     });
   });
+
+  app.get("/cart", (req, res) => {
+    res.render('cart', {test: 'test text'})
+  });
+  
 };

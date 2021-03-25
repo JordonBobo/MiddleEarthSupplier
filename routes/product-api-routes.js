@@ -16,11 +16,22 @@ module.exports = (app) => {
     }).then((dbProduct) => res.json('home', dbProduct));
   });  
   
-  app.post('api/products', (req, res) => {
+
+  // work here
+
+  app.post('/api/products', (req, res) => {
     db.Product.create(req.body).then((dbProduct) => res.json('home', dbProduct));
   });
   
-  app.delete('api/products/:id', (req, res) => {
+
+
+
+
+
+
+
+
+  app.delete('/api/products/:id', (req, res) => {
     db.Product.destroy({
       where: {
         id: req.params.id,

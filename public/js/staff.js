@@ -14,9 +14,10 @@ button.on('submit',event=>{
         image: image.val().trim(),
         price: price.val().trim(),
     }
-    if(!productData.product || !productData.description || !productData.image || productData.price){
-        return;
-    }
+    console.log(productData)
+    // if(!productData.product || !productData.description || !productData.image || !productData.price){
+    //     return;
+    // }
     addProduct(productData)
     product.val('');
     description.val('');
@@ -24,7 +25,8 @@ button.on('submit',event=>{
     price.val('');
 })
 function addProduct(productData) {
-  $.post('/api/products',productData).then(console.log(productData))
+  console.log("test")
+  $.post('/api/products', {productData}).then(console.log(productData))
   .catch(err => {
       console.log(err)
   })

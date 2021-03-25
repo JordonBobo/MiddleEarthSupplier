@@ -2,3 +2,39 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body {
+  background-color: rgba(110,110,110,110);
+}
+
+
+.grayscale {
+  background-image: linear-gradient(to bottom, #000000, #1f1f1f, #373737, #525252, #6e6e6e);
+}
+
+.fullWidth {
+  width: 100%;
+  
+}
+
+.lightGray{
+  background-color: lightgray;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-bottom: 20px;
+}
+
+.relative{
+  position: relative;
+}
+
+.center {
+  top: 10px;
+  
+  /* bottom: 10px; */
+}
+
+.quantity{
+  width: 90%;
+}
+
