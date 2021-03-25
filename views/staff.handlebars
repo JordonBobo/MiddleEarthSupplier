@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
+
+<h1>Staff Back Office</h1>
+
+<h2>Add New Product</h2>
+<form id="form">
+  <div>
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" name="name">
+    <label for="productDescription">Description:</label>
+    <input type="text" id="productDescription" name="description">
+    <label for="productImage">Image File Name:</label>
+    <input type="text" id="productImage" name="img_filename">
+    <label for="productPrice">Price:</label>
+    <input type="text" id="productPrice" name="list_price">
+    <button type="submit">Add</button>
+  </div>
+</form>
+
+<h2>Pending Orders</h2>
+<ul>
+  {{#each burgers}}
+  {{#unless devoured}}
+    <li>
+      {{burger_name}}
+      <button class="devour" data-id="{{id}}">Devour It!</button>
+    </li>
+  {{/unless}}
+  {{/each}}
+</ul>
+<h2>Devoured!</h2>
+<ul>
+  {{#each burgers}}
+  {{#if devoured}}
+    <li>
+      {{burger_name}}
+    </li>
+  {{/if}}
+  {{/each}}
+</ul>
