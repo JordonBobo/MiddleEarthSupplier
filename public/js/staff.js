@@ -9,10 +9,10 @@ const button =$('#newProductForm')
 button.on('submit',event=>{
     event.preventDefault();
     const productData = {
-        product: product.val().trim(),
+        name: product.val().trim(),
         description: description.val().trim(),
-        image: image.val().trim(),
-        price: price.val().trim(),
+        img_filename: image.val().trim(),
+        list_price: price.val().trim(),
     }
     console.log(productData)
     // if(!productData.product || !productData.description || !productData.image || !productData.price){
@@ -26,7 +26,7 @@ button.on('submit',event=>{
 })
 function addProduct(productData) {
   console.log("test")
-  $.post('/api/products', {productData}).then(console.log(productData))
+  $.post('/api/products', productData).then(console.log(productData))
   .catch(err => {
       console.log(err)
   })

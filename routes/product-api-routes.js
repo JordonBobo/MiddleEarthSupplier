@@ -13,14 +13,14 @@ module.exports = (app) => {
         id: req.params.id,
       },
       include: [db.Item],
-    }).then((dbProduct) => res.json('home', dbProduct));
+    }).then((dbProduct) => res.render('home', dbProduct));
   });  
   
 
   // work here
 
   app.post('/api/products', (req, res) => {
-    db.Product.create(req.body).then((dbProduct) => res.json('home', dbProduct));
+    db.Product.create(req.body).then((dbProduct) => res.render('home', dbProduct));
   });
   
 
