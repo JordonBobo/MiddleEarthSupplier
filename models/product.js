@@ -30,13 +30,13 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  // one product can have many orders through items
-  Product.associate = (models) => {
-    Product.hasMany(models.Item, {
-      // when a product is deleted, delete any associated items
-      onDelete: 'cascade',
-    });
-  };
+  // // one product can have many orders through items
+  // Product.associate = (models) => {
+  //   Product.hasMany(models.Item, {
+  //     // when a product is deleted, delete any associated items
+  //     onDelete: 'cascade',
+  //   });
+  // };
 
   return Product;
 };

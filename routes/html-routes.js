@@ -6,6 +6,7 @@ const db = require('../models');
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { allowedNodeEnvironmentFlags } = require("process");
 
+
 module.exports = function(app) {
   app.get("/", (req, res) => {
     db.Product.findAll().then(dbProduct => {
@@ -50,7 +51,9 @@ module.exports = function(app) {
   });
 
   app.get("/cart", (req, res) => {
-    res.render('cart', {test: 'test text'})
+    res.render('cart', {
+      
+    })
   });
   
 };
