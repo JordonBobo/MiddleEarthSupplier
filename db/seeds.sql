@@ -1,0 +1,18 @@
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Lembas Bread", "An elvish way bread. It is more strengthening than any food made by Men, and it is more pleasant than cram, by all accounts. Price is per kilogram.", "lembasBread01.jpg", 18);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Mithral Armor", "Stronger than steel but much lighter in weight. The ore is mined by the Dwarves in the mines of Khazad-dûm and can be beaten and polished without being weakened or tarnished.", "mithrilArmor01.jpg", 6000);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Pipe Weed", "Quality smoking leaf imported from the Shire. Also called Halfling's Leaf, Westman's Weed, or Sweet Gelenas. Price is per Kilogram.", "pipeWeed01.jpg", 4.50);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Smoking Pipe", "A pipe for smoking Sweet Gelenas or other Pipe Weeds. Ergonomic design helps blowing smoke rings.", "smokingPipe01.jpg", 6);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Chess Game", "A foreign game imported to Middle Earth. Fine crafted wooden pieces.", "chessGame01.jpg", 500);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Gondorian Ale", "Fine dark ale from Gondor. It comes in pints? No, price is per barrel.", "gondorianAle01.jpg", 31);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Staff", "Fine crafted wooden staff. Imported from Rohan.", "staff01.jpg", 14);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Elfstone Pendant", "Fine green gemstone pendant from Gondolin. Antique from the First Age.", "elfstonePendant01.jpg", 85);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Hithlain Rope", "Exquisite elvish rope. Can be unknotted at will.", "hithlainRope01.jpg", 15);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Dwarvish Axe", "Crafted in Moria. Also called a walking axe. Sturdy and reliable in times of war or peace.", "dwarvishAxe01.jpg", 40);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Fire of Orthanc", "Also called blasting fire. When exposed to flame, it has an explosive reaction.", "fireOfOrthanc01.jpg", 26);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Phial of Galadriel", "Shines bright in dark places. Contains water from the fountain which holds the light of Eärendil's star.", "phialOfGaladriel01.jpg", 110);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Palantíri", "The Seeing Stone of Orthanc. Used for communication across great distances.", "Palantiri01.jpg", 250);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Nauglamír", "A Dwarvish necklace. Studded with gems and made from", "nauglamir01.jpg", 55);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Book of Mazarbul", "First edition. Recounts the filed attempts of Mazarbul to re-colonize the mines of Moria.", "bookOfMazarbul01.jpg", 45);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Ent-Draught", "One of the main foodstuff of the race of trees. May cause an increase in stature.", "entDraught01.jpg", 18);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Fëanorian Lamp", "Stays lit even in the rain or strong wind.", "feanorianLamp01.jpg", 28);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Mûmakil Horn", "Also called Oliphaunt horn. Hollow and can be used as a drinking vessel.", "mumakilHorn01.jpg", 25);
