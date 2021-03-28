@@ -49,16 +49,16 @@
 
   <h2>Pending Orders</h2>
   <ul>
-    {{#each burgers}}
-    {{#unless devoured}}
+    {{#each orders}}
+    {{!-- {{#unless shipped}} --}}
     <li>
-      {{burger_name}}
-      <button class="devour" data-id="{{id}}">Devour It!</button>
+      {{shippingName}}
+      <button class="ship" data-id="{{id}}">Ship</button>
     </li>
-    {{/unless}}
+    {{!-- {{/unless}} --}}
     {{/each}}
   </ul>
-  <h2>Devoured!</h2>
+  {{!-- <h2>Devoured!</h2>
   <ul>
     {{#each burgers}}
     {{#if devoured}}
@@ -67,9 +67,9 @@
     </li>
     {{/if}}
     {{/each}}
-  </ul>
+  </ul> --}}
 </div>
 
-	<script type="text/javascript" src="/js/staff.js"></script>
-	<script type="text/javascript" src="/js/login.js"></script>
-	<script type="text/javascript" src="/js/signup.js"></script>
+<script type="text/javascript" src="/js/staff.js"></script>
+<script type="text/javascript" src="/js/login.js"></script>
+<script type="text/javascript" src="/js/signup.js"></script>
