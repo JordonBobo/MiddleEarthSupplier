@@ -5,6 +5,12 @@ form.login {
 
 body {
   background-color: rgba(110,110,110,110);
+  background-image: url("/images/storeFront01.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed
 }
 
 
@@ -42,10 +48,11 @@ body, html {
   height: 100%;
 }
 
-.bg{
+/* .bg{
   background-image: url("/images/storeFront01.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
- }
+  background-attachment: fixed
+ } */
