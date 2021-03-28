@@ -38,3 +38,14 @@ body {
   width: 90%;
 }
 
+body, html {
+  height: 100%;
+}
+
+.bg{
+  background-image: url("/images/storeFront01.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
