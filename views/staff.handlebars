@@ -48,27 +48,36 @@
   </form> --}}
 
   <h2>Pending Orders</h2>
-  <ul>
-    {{#each orders}}
-    {{!-- {{#unless shipped}} --}}
-    <li>
-      {{shippingName}}
-      <button class="ship" data-id="{{id}}">Ship</button>
-    </li>
-    {{!-- {{/unless}} --}}
-    {{/each}}
-  </ul>
-  {{!-- <h2>Devoured!</h2>
-  <ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>
-      {{burger_name}}
-    </li>
-    {{/if}}
-    {{/each}}
-  </ul> --}}
-</div>
+
+  <div class="table-responsive">
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Shipping Address</th>
+          <th scope="col">Shipping Items</th>
+          <th scope="col">Total Price</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="orderInfo">
+        {{#each order}}
+        {{#dataValues}}
+        {{#unless shipped}}
+          <tr>
+            <td>{{shippingName}}</td>
+            <td>{{shippingAddress}}</td>
+            <td id="shipping-items">{{shippingItems}}</td>
+            <td>{{totalPrice}}</td>
+            <td><button class="ship" data-id="{{id}}">Ship</button></td>
+          </tr>
+        {{/unless}}
+        {{/dataValues}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  
 
 <script type="text/javascript" src="/js/staff.js"></script>
 <script type="text/javascript" src="/js/login.js"></script>

@@ -24,6 +24,7 @@ button.on('submit',event=>{
     image.val('');
     price.val('');
 })
+
 function addProduct(productData) {
   console.log("test")
   $.post('/api/products', productData).then(console.log(productData))
@@ -32,9 +33,51 @@ function addProduct(productData) {
   })
 }
 
-
-
-  $.get("/api/user_data").then(data => {
-    $(".member-name").text(data.email);
+// *** MODIFY HERE ***
+const devourBtns = document.querySelectorAll('.devour');
+if (devourBtns) {
+  devourBtns.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      const id = e.target.getAttribute('data-id');
+      const devourState = {
+        devoured: true,
+      };
+      fetch(`/api/burgers/${id}`, {
+        method: 'PUT',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(devourState),
+      }).then((response) => {
+        if (response.ok) {
+          console.log('changed to devoured');
+          location.reload('/');
+        } else {
+          alert('something went wrong!');
+        }
+      });
+    });
   });
+}
+
+  // $.get("/api/user_data").then(data => {
+  //   $(".member-name").text(data.email);
+  // });
+
+  // for (let i = 0; i < dbOrder.shippingItems.length; i++) {
+  //   // console.log(i)
+  //   // var stuff = basket[i].title + ": " + basket[i].quantity;
+  //   // var newTag = '<p>' + stuff + '</p>'
+  //   // console.log(newTag)
+  //   var tRow = $('<tr>');
+  //   var item = $('<td>').text(basket[i].title);
+  //   var quantity = $('<td>').text(basket[i].quantity);
+  //   var unitPrice = $('<td>').text(basket[i].price);
+  //   tRow.append(item, quantity, unitPrice);
+  //   $('#cartInfo').append(tRow);
+  //   price = price + basket[i].quantity * basket[i].price
+  //   $('#orderPrice').text(price)
+  // }
+
 }); 

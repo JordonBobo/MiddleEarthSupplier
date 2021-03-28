@@ -13,6 +13,20 @@ module.exports = (app) => {
       },
     }).then((dbOrder) => res.render('staff', dbOrder));
   });  
+
+  // *** MODIFY HERE ***
+  app.put('/api/orders/:id', (req, res) => {
+    db.Order.update(req.body, {
+      where:{
+        id: req.body.id,
+      },
+      // if no rows were changed, return 404
+      if (result.changedRows === 0) {
+        return res.status(404).end();
+      }
+      res.status(200).end();
+    });
+  });
   
 
 
