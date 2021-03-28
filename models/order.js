@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     shippingItems: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         notEmpty: true,

@@ -50,10 +50,13 @@ module.exports = function(app) {
     });
   });
 
+  // const x = JSON.parse(localStorage.getItem("basket"))
+
   app.get("/cart", (req, res) => {
-    res.render('cart', {
-      
-    })
+    res.render('cart', [{
+      // items: x.title,
+      // quantity: x.quantity
+    }])
   });
   
 };

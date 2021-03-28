@@ -4,8 +4,16 @@ $(document).ready(() => {
 // console.log(basket2)
 
 
-const basket = []
+// const basket = []
 
+
+
+const basket = JSON.parse(localStorage.getItem("basket")) || [];
+
+function localStore() {
+    var localPush = JSON.stringify(basket);
+    localStorage.setItem ("basket", localPush);
+}
 
 $(".add-to-cart").on("click", function(event) {
     event.preventDefault();
@@ -15,8 +23,8 @@ $(".add-to-cart").on("click", function(event) {
         quantity: this.previousElementSibling.value,
         price: event.target.getAttribute("data-price")
     }
-    console.log(item);
-    basket.push(JSON.stringify(item))
+    basket.push(item)
+    localStore()
     console.log(basket)
 })
 
@@ -34,8 +42,8 @@ $(".add-to-cart").on("click", function(event) {
       const shippingInfo = {
         shippingName: shippingName.val().trim(),
         shippingAddress: shippingAddress.val().trim(),
-        shippingItems: basket,
-        totalPrice: 100
+        shippingItems: JSON.stringify(basket),
+        totalPrice: price
       }
     //   console.log(productData)
       // if(!productData.product || !productData.description || !productData.image || !productData.price){
@@ -44,6 +52,7 @@ $(".add-to-cart").on("click", function(event) {
       addOrder(shippingInfo)
       shippingName.val('');
       shippingAddress.val('');
+      localStorage.removeItem("basket");
   })
   function addOrder(shippingInfo) {
     $.post('/api/orders', shippingInfo).then(console.log(shippingInfo))
@@ -55,4 +64,19 @@ $(".add-to-cart").on("click", function(event) {
     // $.get("/api/user_data").then(data => {
     //   $(".member-name").text(data.email);
     // });
-  }); 
+    
+
+let price = 0
+for (let i = 0; i < basket.length; i++) {
+  console.log(i)
+  var stuff = basket[i].title + ": " + basket[i].quantity;
+  var newTag = '<p>' + stuff + '</p>'
+  console.log(newTag)
+  $('#cartInfo').append(newTag)
+  price = price + basket[i].quantity * basket[i].price
+  $('#orderPrice').text(price)
+}
+
+}); 
+
+
