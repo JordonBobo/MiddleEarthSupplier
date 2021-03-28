@@ -1,15 +1,33 @@
 
 
 
-<h1>Your cart</h1>
-<div id='cartInfo'>
-</div>
+{{!-- <div id='cartInfo'>
+</div> --}}
 
-<h5>
+{{!-- <h5>
   Total Price: <div id='orderPrice'></div>
-</h5>
+</h5> --}}
 
 <div class="container-fluid">
+  <h1>Your Cart</h1>
+  
+  <div class="table-responsive">
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody id="cartInfo"></tbody>
+      <tfoot>
+        <td colspan="2">Total Price</td>
+        <td id="orderPrice"></td>
+      </tfoot>
+    </table>
+  </div>
+
   <h2>Shipping Info</h2>
 
   <form id="shippingInfo">
