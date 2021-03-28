@@ -8,44 +8,67 @@
   </div>
 </nav>
 
-<h1>Staff Back Office</h1>
+<div class="container-fluid">
+  <h1>Staff Back Office</h1>
 
-<h2>Add New Product</h2>
-<form id="newProductForm">
-  <div>
-    <label for="productName">Product Name:</label>
-    <input type="text" id="productName" name="name">
-    <label for="productDescription">Description:</label>
-    <input type="text" id="productDescription" name="description">
-    <label for="productImage">Image File Name:</label>
-    <input type="text" id="productImage" name="img_filename">
-    <label for="productPrice">Price:</label>
-    <input type="text" id="productPrice" name="list_price">
-    <button type="submit">Add</button>
-  </div>
-</form>
+  <h2>Add New Product</h2>
 
-<h2>Pending Orders</h2>
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  <li>
-    {{burger_name}}
-    <button class="devour" data-id="{{id}}">Devour It!</button>
-  </li>
-  {{/unless}}
-  {{/each}}
-</ul>
-<h2>Devoured!</h2>
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  <li>
-    {{burger_name}}
-  </li>
-  {{/if}}
-  {{/each}}
-</ul>
+  <form id="newProductForm">
+    <div class="mb-3">
+      <label for="productName" class="form-label">Product Name</label>
+      <input type="text" class="form-control" id="productName" name="name">
+    </div>
+    <div class="mb-3">
+      <label for="productDescription" class="form-label">Description</label>
+      <input type="text" class="form-control" id="productDescription" name="description">
+    </div>
+    <div class="mb-3">
+      <label for="productImage" class="form-label">Image Filename</label>
+      <input type="text" class="form-control" id="productImage" name="img_filename">
+    </div>
+    <div class="mb-3">
+      <label for="productPrice" class="form-label">Price</label>
+      <input type="text" class="form-control" id="productPrice" name="list_price">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+
+  {{!-- <form id="newProductForm">
+    <div>
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="name">
+      <label for="productDescription">Description:</label>
+      <input type="text" id="productDescription" name="description">
+      <label for="productImage">Image File Name:</label>
+      <input type="text" id="productImage" name="img_filename">
+      <label for="productPrice">Price:</label>
+      <input type="text" id="productPrice" name="list_price">
+      <button type="submit">Add</button>
+    </div>
+  </form> --}}
+
+  <h2>Pending Orders</h2>
+  <ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+      {{burger_name}}
+      <button class="devour" data-id="{{id}}">Devour It!</button>
+    </li>
+    {{/unless}}
+    {{/each}}
+  </ul>
+  <h2>Devoured!</h2>
+  <ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>
+      {{burger_name}}
+    </li>
+    {{/if}}
+    {{/each}}
+  </ul>
+</div>
 
 	<script type="text/javascript" src="/js/staff.js"></script>
 	<script type="text/javascript" src="/js/login.js"></script>
