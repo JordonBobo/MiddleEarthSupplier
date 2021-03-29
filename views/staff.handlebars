@@ -1,15 +1,18 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
+<br>
+<section>
+<div>
+  <h1 class='stone gray'>Staff Back Office <br>
+
       <a class="navbar-brand" href="/logout">
         Logout
       </a>
-    </div>
-  </div>
-</nav>
+</h1>
+</div>
+<br>
+<br>
 
-<div class="container-fluid">
-  <h1>Staff Back Office</h1>
+
+<div class="container-fluid scroll">
 
   <h2>Add New Product</h2>
 
@@ -30,7 +33,7 @@
       <label for="productPrice" class="form-label">Price</label>
       <input type="text" class="form-control" id="productPrice" name="list_price">
     </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" class="btn btn-primary">Add Product</button>
   </form>
 
   {{!-- <form id="newProductForm">
@@ -46,7 +49,8 @@
       <button type="submit">Add</button>
     </div>
   </form> --}}
-
+</div>
+<div class="container-fluid scroll">
   <h2>Pending Orders</h2>
 
   <div class="table-responsive">
@@ -68,7 +72,7 @@
             <td>{{shippingName}}</td>
             <td>{{shippingAddress}}</td>
             <td id="shipping-items">{{shippingItems}}</td>
-            <td>{{totalPrice}}</td>
+            <td>₡{{totalPrice}}</td>
             <td><button class="ship" data-id="{{id}}">Ship</button></td>
           </tr>
         {{/unless}}
@@ -76,8 +80,19 @@
         {{/each}}
       </tbody>
     </table>
-  </div>
-  
+</div>
+</section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 <script type="text/javascript" src="/js/staff.js"></script>
 <script type="text/javascript" src="/js/login.js"></script>

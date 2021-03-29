@@ -1,13 +1,6 @@
 $(document).ready(() => {
 
-
-// console.log(basket2)
-
-
-// const basket = []
-
-
-
+// const tl = gsap.timeline( {defaults: {ease: 'power1.out'} })
 const basket = JSON.parse(localStorage.getItem("basket")) || [];
 
 function localStore() {
@@ -23,9 +16,10 @@ $(".add-to-cart").on("click", function(event) {
         quantity: this.previousElementSibling.value,
         price: event.target.getAttribute("data-price")
     }
+    this.previousElementSibling.value = ''
     basket.push(item)
     localStore()
-    console.log(basket)
+    // console.log(basket)
 })
 
 
@@ -33,11 +27,10 @@ $(".add-to-cart").on("click", function(event) {
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
   const button = $('#submitOrder')
-  console.log(button)
+  // console.log(button)
   const shippingName =$('#shippingName')
   const shippingAddress =$('#shippingAddress')
   button.on('click',event=>{
-      alert('submit worked')
       event.preventDefault();
       const shippingInfo = {
         shippingName: shippingName.val().trim(),
@@ -53,6 +46,7 @@ $(".add-to-cart").on("click", function(event) {
       shippingName.val('');
       shippingAddress.val('');
       localStorage.removeItem("basket");
+      // displaySuccess();
   })
   function addOrder(shippingInfo) {
     $.post('/api/orders', shippingInfo).then(console.log(shippingInfo))
@@ -60,11 +54,14 @@ $(".add-to-cart").on("click", function(event) {
         console.log(err)
     })
   }
-  
-    // $.get("/api/user_data").then(data => {
-    //   $(".member-name").text(data.email);
-    // });
-    
+  // function displaySuccess() {
+  //   tl.to('.orderSuccess', {x:'100%', duration: 1} );
+  //   tl.fromTo('.orderSuccess', {opacity: 1}, {opacity: 0, duration: 1, delay: 2} );
+  //   tl.to('.orderSuccess', {x:'-100%', duration: 1} );
+  // }
+
+
+
 
 let price = 0
 for (let i = 0; i < basket.length; i++) {
