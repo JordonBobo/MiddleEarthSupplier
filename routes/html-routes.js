@@ -46,6 +46,7 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/staff", isAuthenticated, (req, res) => {
     db.Order.findAll().then(dbOrder => {
+      console.log(dbOrder)
       res.render('staff', {order:dbOrder})
     });
   });

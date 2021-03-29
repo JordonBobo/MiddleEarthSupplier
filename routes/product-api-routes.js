@@ -2,9 +2,7 @@ const db = require('../models');
 
 module.exports = (app) => {
   app.get('/api/products', (req, res) => {
-    db.Product.findAll({
-      include: [db.Item],
-    }).then((dbProduct) => res.json(dbProduct));
+    db.Product.findAll().then((dbProduct) => res.json(dbProduct));
   });
   
   app.get('/api/products/:id', (req, res) => {
@@ -12,15 +10,17 @@ module.exports = (app) => {
       where: {
         id: req.params.id,
       },
-      include: [db.Item],
-    }).then((dbProduct) => res.render('home', dbProduct));
+    }).then((dbProduct) => res.json(dbProduct));
   });  
   
 
   // work here
 
   app.post('/api/products', (req, res) => {
-    db.Product.create(req.body).then((dbProduct) => res.render('home', dbProduct));
+    db.Product.create(req.body).then((dbProduct) => {
+      console.log(dbProduct);
+      res.json(dbProduct)
+    });
   });
   
 
@@ -36,6 +36,6 @@ module.exports = (app) => {
       where: {
         id: req.params.id,
       },
-    }).then((dbProduct) => res.json('home', dbProduct));
+    }).then((dbProduct) => res.json(dbProduct));
   });
 };
