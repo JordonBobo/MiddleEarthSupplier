@@ -21,10 +21,10 @@ module.exports = (app) => {
         id: req.body.id,
       },
       // if no rows were changed, return 404
-      if (result.changedRows === 0) {
-        return res.status(404).end();
-      }
-      res.status(200).end();
+      // if (result.changedRows === 0) {
+      //   return res.status(404).end();
+      // }
+      // res.status(200).end();
     });
   });
   

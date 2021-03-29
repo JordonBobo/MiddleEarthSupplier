@@ -20,23 +20,19 @@ body {
 
 .fullWidth {
   width: 100%;
+  top: 10px;
   
 }
 
-.lightGray{
-  background-color: lightgray;
-  margin-top: 10px;
-  margin-left: 20px;
-  padding-bottom: 20px;
-}
+
 
 .relative{
   position: relative;
 }
 
 .center {
-  top: 10px;
-  
+  top: 20px;
+  padding-top: 20px;
   /* bottom: 10px; */
 }
 
@@ -44,15 +40,101 @@ body {
   width: 90%;
 }
 
-body, html {
+body html {
   height: 100%;
 }
 
-/* .bg{
-  background-image: url("/images/storeFront01.jpg");
+.scroll {
+  background-image: url('/images/parchment-background.jpg');
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+}
+
+.stone {
+  background-image: url('/images/stone-background.jpg');
+}
+
+.gray {
+  color: darkgray;
+}
+.right {
+  margin-left: 145px;
+  margin-top: -20px;
+}
+.link{
+  font-size: larger;
+}
+.link:hover{
+  background-color: red;
+  border-radius: 10px;
+}
+
+
+
+
+    /* Tengwar Annatar by Johan Winge  https://www.dafont.com/tengwar-annatar.font */
+  @font-face {
+    font-family: 'tngan';
+    src: URL(/images/tnganbi.ttf);
+    font-style: normal;
+    font-weight: 100;
+  }
+
+  .elvish {
+    font-family: 'tngan';
+    font-weight: 100;
+  }
+
+    /* First Order à € by Iconian Fonts  https://www.dafont.com/first-order.font */
+  @font-face {
+      font-family: firstorder;
+      src: URL(/images/firstorder.ttf);
+      font-style: normal;
+      font-weight: 100;
+  }
+
+  .english {
+    font-family: 'firstorder';
+    font-weight: 100;
+  }
+
+
+
+
+
+
+.shroud {
+  background-color: black;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed
- } */
+  align-items: center;
+  justify-content: center;
+}
+.shroudText {
+  color: gray;
+  font-family: 'firstorder';
+  font-weight: 100;
+  opacity: 0;
+  top: 30%;
+}
+
+.shroudImg {
+  opacity: 0;
+  left: 100px;
+  align-items: center;
+  justify-content: center;
+  top: 30%;
+}
+
+
+.orderSuccess {
+  left: -100%;
+}
+
+  
