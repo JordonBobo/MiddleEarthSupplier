@@ -1,144 +1,148 @@
 <br>
 <section>
-<div>
-  <h1 class='stone gray'>Staff Back Office <br>
+  <div>
+    <h1 class='stone gray'>Staff Back Office <br>
 
       <a class="navbar-brand" href="/logout">
         Logout
       </a>
-</h1>
-</div>
-<br>
-<br>
+    </h1>
+  </div>
+  <br>
+  <br>
 
 
-<div class="container-fluid scroll">
+  <div class="container-fluid scroll">
 
-  <h2>Add New Product</h2>
+    <h2>Add New Product</h2>
 
-  <form id="newProductForm">
-    <div class="mb-3">
-      <label for="productName" class="form-label">Product Name</label>
-      <input type="text" class="form-control" id="productName" name="name">
-    </div>
-    <div class="mb-3">
-      <label for="productDescription" class="form-label">Description</label>
-      <input type="text" class="form-control" id="productDescription" name="description">
-    </div>
-    <div class="mb-3">
-      <label for="productImage" class="form-label">Image Filename</label>
-      <input type="text" class="form-control" id="productImage" name="img_filename">
-    </div>
-    <div class="mb-3">
-      <label for="productPrice" class="form-label">Price</label>
-      <input type="text" class="form-control" id="productPrice" name="list_price">
-    </div>
-    <button type="submit" class="btn btn-primary">Add Product</button>
-  </form>
+    <form id="newProductForm">
+      <div class="mb-3">
+        <label for="productName" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="productName" name="name">
+      </div>
+      <div class="mb-3">
+        <label for="productDescription" class="form-label">Description</label>
+        <input type="text" class="form-control" id="productDescription" name="description">
+      </div>
+      <div class="mb-3">
+        <label for="productImage" class="form-label">Image Filename</label>
+        <input type="text" class="form-control" id="productImage" name="img_filename">
+      </div>
+      <div class="mb-3">
+        <label for="productPrice" class="form-label">Price</label>
+        <input type="text" class="form-control" id="productPrice" name="list_price">
+      </div>
+      <button type="submit" class="btn btn-primary">Add Product</button>
+    </form>
 
-  {{!-- <form id="newProductForm">
-    <div>
-      <label for="productName">Product Name:</label>
-      <input type="text" id="productName" name="name">
-      <label for="productDescription">Description:</label>
-      <input type="text" id="productDescription" name="description">
-      <label for="productImage">Image File Name:</label>
-      <input type="text" id="productImage" name="img_filename">
-      <label for="productPrice">Price:</label>
-      <input type="text" id="productPrice" name="list_price">
-      <button type="submit">Add</button>
-    </div>
-  </form> --}}
-</div>
+    {{!-- <form id="newProductForm">
+      <div>
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="name">
+        <label for="productDescription">Description:</label>
+        <input type="text" id="productDescription" name="description">
+        <label for="productImage">Image File Name:</label>
+        <input type="text" id="productImage" name="img_filename">
+        <label for="productPrice">Price:</label>
+        <input type="text" id="productPrice" name="list_price">
+        <button type="submit">Add</button>
+      </div>
+    </form> --}}
+  </div>
 
-<div class="container-fluid scroll">
-  <h2>Pending Orders</h2>
+  <div class="container-fluid scroll">
+    <h2>Pending Orders</h2>
 
-  <div class="table-responsive">
-    <table class="table table-light">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Shipping Address</th>
-          <th scope="col">Shipping Items</th>
-          <th scope="col">Total Price</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody id="orderInfo">
-        {{#each order}}
-        {{#dataValues}}
-        {{#unless shipped}}
+    <div class="table-responsive">
+      <table class="table table-light">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Shipping Address</th>
+            <th scope="col">Shipping Items</th>
+            <th scope="col">Total Price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="orderInfo">
+          {{#each order}}
+          {{#unless shipped}}
           <tr>
             <td>{{shippingName}}</td>
             <td>{{shippingAddress}}</td>
             <td>
-                {{#each }}
               <table id="orderItems">
-                {{!-- <tr>
-                  <td id="title">This is a super very Long Title 1</td>
-                  <td id="quantity">Quantity 1</td>
-                </tr>
+                {{#each shippingItems}}
                 <tr>
-                  <td id="title">Title 2</td>
-                  <td id="quantity">Quantity 2</td>
-                </tr> --}}
-              </table>
+                  <td id="title">{{title}}</td>
+                  <td id="quantity">{{quantity}}</td>
+                </tr>
                 {{/each}}
+              </table>
             </td>
             {{!-- <td id="shipping-items">{{shippingItems}}</td> --}}
             <td>₡{{totalPrice}}</td>
             <td><button class="ship" data-id="{{id}}">Ship</button></td>
           </tr>
-        {{/unless}}
-        {{/dataValues}}
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
+          {{/unless}}
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
 
-  <h2>Completed Orders</h2>
+    <h2>Completed Orders</h2>
 
-  <div class="table-responsive">
-    <table class="table table-light">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Shipping Address</th>
-          <th scope="col">Shipping Items</th>
-          <th scope="col">Total Price</th>
-        </tr>
-      </thead>
-      <tbody id="orderInfo">
-        {{#each order}}
-        {{#dataValues}}
-        {{#if shipped}}
+    <div class="table-responsive">
+      <table class="table table-light">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Shipping Address</th>
+            <th scope="col">Shipping Items</th>
+            <th scope="col">Total Price</th>
+          </tr>
+        </thead>
+        <tbody id="orderInfo">
+          {{#each order}}
+
+          {{#if shipped}}
           <tr>
             <td>{{shippingName}}</td>
             <td>{{shippingAddress}}</td>
-            <td id="shipping-complete">{{shippingItems}}</td>
+            <td>
+
+              <table id="orderItems">
+                {{#each shippingItems}}
+                <tr>
+                  <td id="title">{{title}}</td>
+                  <td id="quantity">{{quantity}}</td>
+                </tr>
+                {{/each}}
+              </table>
+            </td>
             <td>₡{{totalPrice}}</td>
           </tr>
-        {{/if}}
-        {{/dataValues}}
-        {{/each}}
-      </tbody>
-    </table>
+          {{/if}}
+
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
 
 </section>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <script type="text/javascript" src="/js/staff.js"></script>
 <script type="text/javascript" src="/js/login.js"></script>

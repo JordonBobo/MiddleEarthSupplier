@@ -7,11 +7,11 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { allowedNodeEnvironmentFlags } = require("process");
 
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/", (req, res) => {
     db.Product.findAll().then(dbProduct => {
       console.log(dbProduct)
-      res.render('home', {product:dbProduct})
+      res.render('home', { product: dbProduct })
     });
   });
 
@@ -26,8 +26,8 @@ module.exports = function(app) {
 
   // app.get("/staff", (req, res) => {
   //   // If the user already has an account send them to the members page
-    
-    
+
+
   //   if (req.user) {
   //     res.redirect("/members");
   //   }
@@ -45,8 +45,15 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/staff", isAuthenticated, (req, res) => {
+
     db.Order.findAll().then(dbOrder => {
-      res.render('staff', {order:dbOrder})
+      res.render('staff', {
+        order: dbOrder.map(order => ({
+          ...order.get({ plain: true }),
+          shippingItems: JSON.parse(order.shippingItems)
+        })
+        )
+      })
     });
   });
 
@@ -58,5 +65,5 @@ module.exports = function(app) {
       // quantity: x.quantity
     }])
   });
-  
+
 };

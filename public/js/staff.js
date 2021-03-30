@@ -34,47 +34,47 @@ function addProduct(productData) {
 }
 
 
-fetch('/api/orders', {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log('Successful GET all orders:', data);
-    data.map(({ shippingItems }) => {
-      const orderItems = JSON.parse(shippingItems);
+// fetch('/api/orders', {
+//   method: 'GET',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log('Successful GET all orders:', data);
+//     data.map(({ shippingItems }) => {
+//       const orderItems = JSON.parse(shippingItems);
       
-      for (let i = 0; i < orderItems.length; i++) {
-          var tRow = $('<tr>');
-          var title = $('<td>').text(orderItems[i].title);
-          var quantity = $('<td>').text(orderItems[i].quantity);
-          tRow.append(title, quantity);
-          $('#orderItems').append(tRow);
-      }
+//       for (let i = 0; i < orderItems.length; i++) {
+//           var tRow = $('<tr>');
+//           var title = $('<td>').text(orderItems[i].title);
+//           var quantity = $('<td>').text(orderItems[i].quantity);
+//           tRow.append(title, quantity);
+//           $('#orderItems').append(tRow);
+//       }
         
-      // const row = document.createElement('div');
-      // const chirpArea = document.getElementById('chirp-area');
-      // row.classList.add('chirp');
-      // console.log(items);
-      // console.log(shippingItems);
-      // console.log(shippingItem);
+//       // const row = document.createElement('div');
+//       // const chirpArea = document.getElementById('chirp-area');
+//       // row.classList.add('chirp');
+//       // console.log(items);
+//       // console.log(shippingItems);
+//       // console.log(shippingItem);
 
-    //   const chirpAuthor = document.createElement('p');
-    //   const chirpBody = document.createElement('p');
-    //   const chirpDate = document.createElement('p');
-    //   chirpAuthor.textContent = `${author} chirped: `;
-    //   chirpBody.textContent = `${body}`;
-    //   chirpDate.textContent = `At ${new Date(created_at).toLocaleDateString()}`;
+//     //   const chirpAuthor = document.createElement('p');
+//     //   const chirpBody = document.createElement('p');
+//     //   const chirpDate = document.createElement('p');
+//     //   chirpAuthor.textContent = `${author} chirped: `;
+//     //   chirpBody.textContent = `${body}`;
+//     //   chirpDate.textContent = `At ${new Date(created_at).toLocaleDateString()}`;
 
-    //   row.appendChild(chirpAuthor);
-    //   row.appendChild(chirpBody);
-    //   row.appendChild(chirpDate);
+//     //   row.appendChild(chirpAuthor);
+//     //   row.appendChild(chirpBody);
+//     //   row.appendChild(chirpDate);
 
-    //   chirpArea.prepend(row);
-    });
-  })
+//     //   chirpArea.prepend(row);
+//     });
+//   })
   // .catch((err) => console.error(err));
 
 
