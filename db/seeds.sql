@@ -11,7 +11,7 @@ INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Dwa
 INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Fire of Orthanc", "Also called blasting fire. When exposed to flame, it has an explosive reaction.", "fireOfOrthanc01.jpg", 26);
 INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Phial of Galadriel", "Shines bright in dark places. Contains water from the fountain which holds the light of Eärendil's star.", "phialOfGaladriel01.jpg", 110);
 INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Palantíri", "The Seeing Stone of Orthanc. Used for communication across great distances.", "Palantiri01.jpg", 250);
-INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Nauglamír", "A Dwarvish necklace. Studded with gems and made from", "nauglamir01.jpg", 55);
+INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Nauglamír", "A Dwarvish necklace. Studded with gems and imported from Moria.", "nauglamir01.jpg", 55);
 INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Book of Mazarbul", "First edition. Recounts the filed attempts of Mazarbul to re-colonize the mines of Moria.", "bookOfMazarbul01.jpg", 45);
 INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Ent-Draught", "One of the main foodstuff of the race of trees. May cause an increase in stature.", "entDraught01.jpg", 18);
 INSERT INTO products (name,  description, img_filename, list_price) VALUES ("Fëanorian Lamp", "Stays lit even in the rain or strong wind.", "feanorianLamp01.jpg", 28);
