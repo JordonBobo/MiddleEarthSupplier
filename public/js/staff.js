@@ -33,7 +33,51 @@ function addProduct(productData) {
   })
 }
 
-// *** MODIFY HERE ***
+
+fetch('/api/orders', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log('Successful GET all orders:', data);
+    data.map(({ shippingItems }) => {
+      const orderItems = JSON.parse(shippingItems);
+      
+      for (let i = 0; i < orderItems.length; i++) {
+          var tRow = $('<tr>');
+          var title = $('<td>').text(orderItems[i].title);
+          var quantity = $('<td>').text(orderItems[i].quantity);
+          tRow.append(title, quantity);
+          $('#orderItems').append(tRow);
+      }
+        
+      // const row = document.createElement('div');
+      // const chirpArea = document.getElementById('chirp-area');
+      // row.classList.add('chirp');
+      // console.log(items);
+      // console.log(shippingItems);
+      // console.log(shippingItem);
+
+    //   const chirpAuthor = document.createElement('p');
+    //   const chirpBody = document.createElement('p');
+    //   const chirpDate = document.createElement('p');
+    //   chirpAuthor.textContent = `${author} chirped: `;
+    //   chirpBody.textContent = `${body}`;
+    //   chirpDate.textContent = `At ${new Date(created_at).toLocaleDateString()}`;
+
+    //   row.appendChild(chirpAuthor);
+    //   row.appendChild(chirpBody);
+    //   row.appendChild(chirpDate);
+
+    //   chirpArea.prepend(row);
+    });
+  })
+  // .catch((err) => console.error(err));
+
+
 const shipBtns = document.querySelectorAll('.ship');
 if (shipBtns) {
   shipBtns.forEach((button) => {
@@ -61,23 +105,6 @@ if (shipBtns) {
   });
 }
 
-  // $.get("/api/user_data").then(data => {
-  //   $(".member-name").text(data.email);
-  // });
-
-  // for (let i = 0; i < dbOrder.shippingItems.length; i++) {
-  //   // console.log(i)
-  //   // var stuff = basket[i].title + ": " + basket[i].quantity;
-  //   // var newTag = '<p>' + stuff + '</p>'
-  //   // console.log(newTag)
-  //   var tRow = $('<tr>');
-  //   var item = $('<td>').text(basket[i].title);
-  //   var quantity = $('<td>').text(basket[i].quantity);
-  //   var unitPrice = $('<td>').text(basket[i].price);
-  //   tRow.append(item, quantity, unitPrice);
-  //   $('#cartInfo').append(tRow);
-  //   price = price + basket[i].quantity * basket[i].price
-  //   $('#orderPrice').text(price)
-  // }
+  
 
 }); 

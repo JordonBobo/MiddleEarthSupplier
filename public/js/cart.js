@@ -46,6 +46,8 @@ $(".add-to-cart").on("click", function(event) {
       shippingName.val('');
       shippingAddress.val('');
       localStorage.removeItem("basket");
+      $('#cartInfo').empty();
+      $('#orderPrice').empty();
       // displaySuccess();
   })
   function addOrder(shippingInfo) {
@@ -72,11 +74,11 @@ for (let i = 0; i < basket.length; i++) {
   var tRow = $('<tr>');
   var item = $('<td>').text(basket[i].title);
   var quantity = $('<td>').text(basket[i].quantity);
-  var unitPrice = $('<td>').text(basket[i].price);
+  var unitPrice = $('<td>').text('₡' + basket[i].price);
   tRow.append(item, quantity, unitPrice);
   $('#cartInfo').append(tRow);
   price = price + basket[i].quantity * basket[i].price
-  $('#orderPrice').text(price)
+  $('#orderPrice').text('₡' + price)
 }
 
 }); 

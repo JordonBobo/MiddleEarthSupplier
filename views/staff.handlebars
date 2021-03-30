@@ -50,6 +50,7 @@
     </div>
   </form> --}}
 </div>
+
 <div class="container-fluid scroll">
   <h2>Pending Orders</h2>
 
@@ -71,7 +72,21 @@
           <tr>
             <td>{{shippingName}}</td>
             <td>{{shippingAddress}}</td>
-            <td id="shipping-items">{{shippingItems}}</td>
+            <td>
+                {{#each }}
+              <table id="orderItems">
+                {{!-- <tr>
+                  <td id="title">This is a super very Long Title 1</td>
+                  <td id="quantity">Quantity 1</td>
+                </tr>
+                <tr>
+                  <td id="title">Title 2</td>
+                  <td id="quantity">Quantity 2</td>
+                </tr> --}}
+              </table>
+                {{/each}}
+            </td>
+            {{!-- <td id="shipping-items">{{shippingItems}}</td> --}}
             <td>₡{{totalPrice}}</td>
             <td><button class="ship" data-id="{{id}}">Ship</button></td>
           </tr>
@@ -80,7 +95,38 @@
         {{/each}}
       </tbody>
     </table>
+  </div>
+
+  <h2>Completed Orders</h2>
+
+  <div class="table-responsive">
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Shipping Address</th>
+          <th scope="col">Shipping Items</th>
+          <th scope="col">Total Price</th>
+        </tr>
+      </thead>
+      <tbody id="orderInfo">
+        {{#each order}}
+        {{#dataValues}}
+        {{#if shipped}}
+          <tr>
+            <td>{{shippingName}}</td>
+            <td>{{shippingAddress}}</td>
+            <td id="shipping-complete">{{shippingItems}}</td>
+            <td>₡{{totalPrice}}</td>
+          </tr>
+        {{/if}}
+        {{/dataValues}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 </div>
+
 </section>
   <br>
   <br>
