@@ -34,28 +34,28 @@ function addProduct(productData) {
 }
 
 // *** MODIFY HERE ***
-const devourBtns = document.querySelectorAll('.devour');
-if (devourBtns) {
-  devourBtns.forEach((button) => {
+const shipBtns = document.querySelectorAll('.ship');
+if (shipBtns) {
+  shipBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
       const id = e.target.getAttribute('data-id');
-      const devourState = {
-        devoured: true,
+      const shipState = {
+        shipped: true,
       };
-      fetch(`/api/burgers/${id}`, {
+      fetch(`/api/orders/${id}`, {
         method: 'PUT',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(devourState),
+        body: JSON.stringify(shipState),
       }).then((response) => {
         if (response.ok) {
-          console.log('changed to devoured');
-          location.reload('/');
+          console.log('changed to shipped');
         } else {
           alert('something went wrong!');
         }
+        location.reload();
       });
     });
   });

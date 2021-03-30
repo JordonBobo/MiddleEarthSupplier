@@ -28,6 +28,11 @@ module.exports = (sequelize, DataTypes) => {
         isDecimal: true,
       },
     },
+    shipped: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
   });
 
   // an order cannot be created without a customer
