@@ -21,7 +21,7 @@ Deployed at [Heroku](https://middleearthsupplier.herokuapp.com/).
 
 See the repo at [GitHub](https://github.com/JordonBobo/MiddleEarthSupplier).
 
-![sample webpage](/images/MiddleEarthSupplier.jpg)
+![sample webpage](/public/images/MiddleEarthSupplier.JPG)
 
 ### How to Install
 To install required packages, enter `npm i` in the terminal.
